@@ -1,0 +1,77 @@
+#Stacks
+class Stack:
+    def __init__(self):
+        self.items=[]
+    def push(self,data):
+        self.items.append(data)
+    def pop(self):
+        return self.items.pop()
+    def size(self):
+        return len(self.items)
+    
+#BODMAS Parenthesis checker   
+n=input("enter the expression:")
+s=Stack()
+flag=0
+for i in n:
+  if i=='(' or i=='[' or i=='{':
+    s.push(i)
+  if i==')' or i==']' or i=='}':
+    x=s.pop()
+    
+    if x=='(' and i==')':
+      pass
+    elif x=='[' and i==']':
+      pass
+    elif x=='{' and i=='}':
+      pass
+    else:
+      flag=1
+      break
+  
+if flag==0 and s.size()==0:
+  print("valid expression")
+else:
+  print("invalid expression ")
+
+  
+#Next bigger number in the list or -1
+ip=[3,5,2,14,5,3,7,9,4,6,9,4,2,5,3]
+op=[5,14,14,-1,7,7,9,-1,6,9,-1,5,5,-1,-1]
+o_p=[]
+for i in range(len(ip)):
+    for j in range(i+1,len(ip)):
+        if ip[j]>ip[i]:
+            o_p.append(ip[j])
+            break
+    else:
+        o_p.append(-1)
+print(o_p)
+
+#Basic calculator(input as string)
+ops=['+','-','*','/','%','//','**']
+str=input("Enter the string:")
+for i in str:
+  if i in ops:
+    x=i
+    str=str.replace(i," ")
+L=list(map(float,str.split(" ")))
+match x:
+  case '+':
+    print(L[0]+L[1])
+  case '-':
+    print(L[0]-L[1])
+  case '*':
+    print(L[0]*L[1])
+  case '/':
+    print(L[0]/L[1]) 
+  case '%':
+    print(L[0]%L[1]) 
+  case '//':
+    print(L[0]//L[1]) 
+  case '**':
+    print(L[0]**L[1])  
+    
+           
+    
+    
