@@ -1,0 +1,62 @@
+#Finding the minimum of list
+l=[67,4,21,66,2,45,1,-6]
+min=l[0]
+for j in range(len(l)):
+    if l[j]<min:
+        min=l[j]
+print(min)
+
+#Bubble sort
+L=list(map(int,input().split()))
+n=len(L)
+for j in range(0,n):
+    for i in range(0,n-1-j):
+        if L[i]>L[i+1]:
+            L[i],L[i+1]=L[i+1],L[i]
+print(L)
+
+#Selection sort
+l=[9,7,5,8,10,26,44,3,1]
+for i in range(len(l)):
+    min=l[i]
+    pos=i
+    for j in range(i+1,len(l)):
+        if l[j]<min:
+            min=l[j]
+            pos=j
+        l[i],l[pos]=l[pos],l[i]
+print(l)
+
+
+#Insertion Sort
+L = list(map(int, input().split()))
+n = len(L)
+for j in range(n - 1):
+    for i in range(n - 1 - j):
+        if L[i] > L[i + 1]:
+            L[i], L[i + 1] = L[i + 1], L[i]
+print("Sorted list using Bubble Sort:", L)
+
+
+#RECURSION
+#fibonacci series
+def  fib(n):
+        if n==1:
+            return 0
+        if n==2:
+            return 1
+        return fib(n-1)+fib(n-2)
+        
+if __name__=="__main__":
+    n=int(input("Enter the number of terms:"))
+    print(fib(n))
+
+#Factorial
+def fact(n):
+    if n==0:
+        return 1
+    return n*fact(n-1)
+ 
+if __name__=="__main__":
+    n=int(input("Enter the number:"))
+    print(fact(n))
