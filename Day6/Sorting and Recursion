@@ -31,11 +31,15 @@ print(l)
 #Insertion Sort
 L = list(map(int, input().split()))
 n = len(L)
-for j in range(n - 1):
-    for i in range(n - 1 - j):
-        if L[i] > L[i + 1]:
-            L[i], L[i + 1] = L[i + 1], L[i]
-print("Sorted list using Bubble Sort:", L)
+for i in range(1, n):
+    key = L[i]
+    j = i - 1
+    while j >= 0 and key < L[j]:
+        L[j + 1] = L[j]
+        j -= 1
+    L[j + 1] = key
+print("Sorted list using Insertion Sort:", L)
+
 
 
 #RECURSION
